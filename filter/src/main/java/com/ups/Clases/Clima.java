@@ -5,7 +5,7 @@ public class Clima {
     private int idClima;
     private String ciudad;
     private int temperatura;
-    private String hora;
+    private int hora;
 
     public Clima(ClimaBuilder ClimaBuilder) {
         if (ClimaBuilder == null) {
@@ -39,11 +39,11 @@ public class Clima {
         this.temperatura = temperatura;
     }
     
-    public String getHora() {
+    public int getHora() {
         return hora;
     }
 
-    public void setHora(String hora) {
+    public void setHora(int hora) {
         this.hora = hora;
     }
     @Override
@@ -55,7 +55,7 @@ public class Clima {
         private int idClima;
         private String ciudad;
         private int temperatura;
-        private String hora;
+        private int hora;
 
         public ClimaBuilder() {
             super();
@@ -76,7 +76,7 @@ public class Clima {
             return this;
         }
 
-        public ClimaBuilder hora(String hora) {
+        public ClimaBuilder hora(int hora) {
             this.hora = hora;
             return this;
         }
