@@ -5,6 +5,7 @@ public class Clima {
     private int idClima;
     private String ciudad;
     private int temperatura;
+    private String hora;
 
     public Clima(ClimaBuilder ClimaBuilder) {
         if (ClimaBuilder == null) {
@@ -19,6 +20,7 @@ public class Clima {
         this.idClima = ClimaBuilder.idClima;
         this.ciudad = ClimaBuilder.ciudad;
         this.temperatura = ClimaBuilder.temperatura;
+        this.hora = ClimaBuilder.hora;
     }
 
     public String getCiudad() {
@@ -37,16 +39,23 @@ public class Clima {
         this.temperatura = temperatura;
     }
     
+    public String getHora() {
+        return hora;
+    }
 
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
     @Override
     public String toString() {
-        return "Clima [idClima=" + idClima + ", ciudad=" + ciudad + ", temperatura=" + temperatura + "]";
+        return "Clima [idClima=" + idClima + ", ciudad=" + ciudad + ", hora=" + hora + ", temperatura=" + temperatura + "]";
     }
 
     public static class ClimaBuilder {
         private int idClima;
-    private String ciudad;
-    private int temperatura;
+        private String ciudad;
+        private int temperatura;
+        private String hora;
 
         public ClimaBuilder() {
             super();
@@ -67,14 +76,19 @@ public class Clima {
             return this;
         }
 
+        public ClimaBuilder hora(String hora) {
+            this.hora = hora;
+            return this;
+        }
+
         public Clima build() {
-            Clima emp = null;
+            Clima clima = null;
             if (validarClima()) {
-                emp = new Clima(this);
+                clima = new Clima(this);
             } else {
                 System.out.println("El Clima no se pueden crear");
             }
-            return emp;
+            return clima;
         }
 
         private boolean validarClima() {

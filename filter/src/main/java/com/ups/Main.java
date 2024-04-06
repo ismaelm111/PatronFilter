@@ -10,26 +10,26 @@ import com.ups.Clases.Clima;
 public class Main {
     public static void main(String[] args) {
         List<Clima> climas = Arrays.asList(
-				new Clima.ClimaBuilder().idClima(101).ciudad("Cuenca").temperatura(10).build(),
-				new Clima.ClimaBuilder().idClima(102).ciudad("Guayaquil").temperatura(30).build(),
-				new Clima.ClimaBuilder().idClima(103).ciudad("Quito").temperatura(15).build(),
-				new Clima.ClimaBuilder().idClima(104).ciudad("Manta").temperatura(32).build(),
-				new Clima.ClimaBuilder().idClima(105).ciudad("Machala").temperatura(40).build(),
-				new Clima.ClimaBuilder().idClima(106).ciudad("Azoguez").temperatura(12).build(),
+				new Clima.ClimaBuilder().idClima(101).ciudad("Cuenca").hora("6:00").temperatura(10).build(),
+				new Clima.ClimaBuilder().idClima(102).ciudad("Guayaquil").hora("6:00").temperatura(30).build(),
+				new Clima.ClimaBuilder().idClima(103).ciudad("Quito").hora("6:00").temperatura(15).build(),
+				new Clima.ClimaBuilder().idClima(104).ciudad("Manta").hora("6:00").temperatura(32).build(),
+				new Clima.ClimaBuilder().idClima(105).ciudad("Machala").hora("6:00").temperatura(40).build(),
+				new Clima.ClimaBuilder().idClima(106).ciudad("Azoguez").hora("6:00").temperatura(12).build(),
 
-                new Clima.ClimaBuilder().idClima(101).ciudad("Cuenca").temperatura(20).build(),
-				new Clima.ClimaBuilder().idClima(102).ciudad("Guayaquil").temperatura(25).build(),
-				new Clima.ClimaBuilder().idClima(103).ciudad("Quito").temperatura(4).build(),
-				new Clima.ClimaBuilder().idClima(104).ciudad("Manta").temperatura(35).build(),
-				new Clima.ClimaBuilder().idClima(105).ciudad("Machala").temperatura(23).build(),
-				new Clima.ClimaBuilder().idClima(106).ciudad("Azoguez").temperatura(6).build(),
+                new Clima.ClimaBuilder().idClima(101).ciudad("Cuenca").hora("12:00").temperatura(20).build(),
+				new Clima.ClimaBuilder().idClima(102).ciudad("Guayaquil").hora("12:00").temperatura(25).build(),
+				new Clima.ClimaBuilder().idClima(103).ciudad("Quito").hora("12:00").temperatura(4).build(),
+				new Clima.ClimaBuilder().idClima(104).ciudad("Manta").hora("12:00").temperatura(35).build(),
+				new Clima.ClimaBuilder().idClima(105).ciudad("Machala").hora("12:00").temperatura(23).build(),
+				new Clima.ClimaBuilder().idClima(106).ciudad("Azoguez").hora("12:00").temperatura(6).build(),
 
-                new Clima.ClimaBuilder().idClima(101).ciudad("Cuenca").temperatura(18).build(),
-				new Clima.ClimaBuilder().idClima(102).ciudad("Guayaquil").temperatura(38).build(),
-				new Clima.ClimaBuilder().idClima(103).ciudad("Quito").temperatura(15).build(),
-				new Clima.ClimaBuilder().idClima(104).ciudad("Manta").temperatura(42).build(),
-				new Clima.ClimaBuilder().idClima(105).ciudad("Machala").temperatura(28).build(),
-				new Clima.ClimaBuilder().idClima(106).ciudad("Azoguez").temperatura(9).build());
+                new Clima.ClimaBuilder().idClima(101).ciudad("Cuenca").hora("18:00").temperatura(18).build(),
+				new Clima.ClimaBuilder().idClima(102).ciudad("Guayaquil").hora("18:00").temperatura(38).build(),
+				new Clima.ClimaBuilder().idClima(103).ciudad("Quito").hora("18:00").temperatura(15).build(),
+				new Clima.ClimaBuilder().idClima(104).ciudad("Manta").hora("18:00").temperatura(42).build(),
+				new Clima.ClimaBuilder().idClima(105).ciudad("Machala").hora("18:00").temperatura(28).build(),
+				new Clima.ClimaBuilder().idClima(106).ciudad("Azoguez").hora("18:00").temperatura(9).build());
 				
     
 
