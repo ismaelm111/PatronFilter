@@ -35,16 +35,12 @@ public class Main {
 
     System.out.println("Todos los Empleados...");
 		printEmpleado(empleados);
-		List<Empleado> maleEmployees = applyFilter(new GeneroFilter(), empleados);
+		List<Empleado> mEmployees = applyFilter(new GeneroFilter(Genero.MASCULINO), empleados);
 		System.out.println("Empleados de Genero Masculino...");
-		printEmpleado(maleEmployees);
-	/* 	List<Empleado> maleEngEmployees = (new AndFilter(new MaleFilter(), new EngFilter()).apply(employees));
-		System.out.println("Print all Male And ENG employees...");
-		printEmpleado(maleEngEmployees);
-		List<Empleado> femaleOrHREmployees = (new OrFilter(new FemaleFilter(), new HRFilter()).apply(employees));
-		System.out.println("Print all Female Or HR employees...");
-		printEmpleado(femaleOrHREmployees);
-        */
+		printEmpleado(mEmployees);
+        List<Empleado> fEmployees = applyFilter(new GeneroFilter(Genero.FEMENINO), empleados);
+		System.out.println("Empleados de Genero Femenino...");
+		printEmpleado(fEmployees);
 	}
 
     private static List<Empleado> applyFilter(Filter filter, List<Empleado> empleados) {
