@@ -4,52 +4,50 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.ups.Clases.Departamento;
-import com.ups.Clases.Empleado;
-import com.ups.Clases.Genero;
+import com.ups.Clases.Clima;
+
 
 public class Main {
     public static void main(String[] args) {
-        List<Empleado> empleados = Arrays.asList(
-				new Empleado.EmpleadoBuilder().idEmpleado(101).nombre("Eduardo").genero(Genero.MASCULINO).departamento(Departamento.QA)
-						.salario(1400).build(),
-				new Empleado.EmpleadoBuilder().idEmpleado(102).nombre("Santiago").genero(Genero.MASCULINO).departamento(Departamento.ADMINISTRADOR)
-						.salario(900).build(),
-				new Empleado.EmpleadoBuilder().idEmpleado(103).nombre("Cristian").genero(Genero.MASCULINO).departamento(Departamento.RH)
-						.salario(1500).build(),
-				new Empleado.EmpleadoBuilder().idEmpleado(104).nombre("Ismael").genero(Genero.MASCULINO).departamento(Departamento.TI)
-						.salario(800).build(),
-				new Empleado.EmpleadoBuilder().idEmpleado(105).nombre("Martina").genero(Genero.FEMENINO).departamento(Departamento.SOPORTE)
-						.salario(650).build(),
-				new Empleado.EmpleadoBuilder().idEmpleado(106).nombre("Juana").genero(Genero.FEMENINO).departamento(Departamento.RH)
-						.salario(1300).build(),
-				new Empleado.EmpleadoBuilder().idEmpleado(107).nombre("Miguel").genero(Genero.MASCULINO).departamento(Departamento.QA)
-						.salario(600).build(),
-				new Empleado.EmpleadoBuilder().idEmpleado(108).nombre("Luis").genero(Genero.MASCULINO).departamento(Departamento.QA)
-						.salario(700).build(),
-				new Empleado.EmpleadoBuilder().idEmpleado(109).nombre("Paola").genero(Genero.FEMENINO).departamento(Departamento.RH)
-						.salario(1700).build(),
-				new Empleado.EmpleadoBuilder().idEmpleado(110).nombre("Jorge").genero(Genero.MASCULINO).departamento(Departamento.TI)
-						.salario(1500).build());
+        List<Clima> climas = Arrays.asList(
+				new Clima.ClimaBuilder().idClima(101).ciudad("Cuenca").temperatura(10).build(),
+				new Clima.ClimaBuilder().idClima(102).ciudad("Guayaquil").temperatura(30).build(),
+				new Clima.ClimaBuilder().idClima(103).ciudad("Quito").temperatura(15).build(),
+				new Clima.ClimaBuilder().idClima(104).ciudad("Manta").temperatura(32).build(),
+				new Clima.ClimaBuilder().idClima(105).ciudad("Machala").temperatura(40).build(),
+				new Clima.ClimaBuilder().idClima(106).ciudad("Azoguez").temperatura(12).build(),
+
+                new Clima.ClimaBuilder().idClima(101).ciudad("Cuenca").temperatura(20).build(),
+				new Clima.ClimaBuilder().idClima(102).ciudad("Guayaquil").temperatura(25).build(),
+				new Clima.ClimaBuilder().idClima(103).ciudad("Quito").temperatura(4).build(),
+				new Clima.ClimaBuilder().idClima(104).ciudad("Manta").temperatura(35).build(),
+				new Clima.ClimaBuilder().idClima(105).ciudad("Machala").temperatura(23).build(),
+				new Clima.ClimaBuilder().idClima(106).ciudad("Azoguez").temperatura(6).build(),
+
+                new Clima.ClimaBuilder().idClima(101).ciudad("Cuenca").temperatura(18).build(),
+				new Clima.ClimaBuilder().idClima(102).ciudad("Guayaquil").temperatura(38).build(),
+				new Clima.ClimaBuilder().idClima(103).ciudad("Quito").temperatura(15).build(),
+				new Clima.ClimaBuilder().idClima(104).ciudad("Manta").temperatura(42).build(),
+				new Clima.ClimaBuilder().idClima(105).ciudad("Machala").temperatura(28).build(),
+				new Clima.ClimaBuilder().idClima(106).ciudad("Azoguez").temperatura(9).build());
+				
     
 
-    System.out.println("Todos los Empleados...");
-		printEmpleado(empleados);
-		List<Empleado> mEmployees = applyFilter(new GeneroFilter(Genero.MASCULINO), empleados);
-		System.out.println("Empleados de Genero Masculino...");
-		printEmpleado(mEmployees);
-        List<Empleado> fEmployees = applyFilter(new GeneroFilter(Genero.FEMENINO), empleados);
-		System.out.println("Empleados de Genero Femenino...");
-		printEmpleado(fEmployees);
+    System.out.println("Todas las Ciudades con sus temperaturas...");
+		printClima(climas);
+		List<Clima> climaAlertas = applyFilter(new TemperaturaFilter() , climas);
+		System.out.println("Alerta de temperaturas de Ciudades...");
+        System.out.println("Temperaturas Menores a 12º y Mayores a 38º");
+		printClima(climaAlertas);
 	}
 
-    private static List<Empleado> applyFilter(Filter filter, List<Empleado> empleados) {
-		return empleados.stream().filter(empleado -> filter.apply(empleado)).collect(Collectors.toList());
+    private static List<Clima> applyFilter(Filter filter, List<Clima> Climas) {
+		return Climas.stream().filter(Clima -> filter.apply(Clima)).collect(Collectors.toList());
 	}
 
-	private static void printEmpleado(List<Empleado> empleados) {
+	private static void printClima(List<Clima> Climas) {
 		System.out.println("======================================================================");
-		empleados.stream().forEach(empleado -> System.out.println(empleado));
+		Climas.stream().forEach(Clima -> System.out.println(Clima));
 		System.out.println("======================================================================");
 	}
 }
